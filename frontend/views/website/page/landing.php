@@ -23,6 +23,7 @@ $this->image = $model->image;
                     'srcset' => '/images/daxslab-white.png',
                     'media' => '(prefers-color-scheme: dark)',
                 ]) ?>
+                <!-- Use this image as fallback
                 <?= Html::img("@web/images/daxslab-color.png", [
                     'alt' => $this->title,
                     'class' => 'img-fluid',
