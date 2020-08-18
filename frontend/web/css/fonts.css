@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'Continuum';
+    src: url('../fonts/continuum-bold-regular.ttf');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Continuum';
+    src: url('../fonts/continuum-medium-regular.ttf');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Denmark';
+    src: url('../fonts/Denmark.ttf');
+    font-weight: normal;
+}

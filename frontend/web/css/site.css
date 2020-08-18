@@ -1,0 +1,64 @@
+body {
+    padding-top: 87px;
+    color: #300a24;
+    font-family: Roboto, sans-serif;
+    font-size: 18px;
+}
+
+.navbar, .btn, h1, .h1 {
+    font-family: Denmark, sans-serif;
+    text-transform: lowercase;
+    font-weight: normal;
+}
+
+h2, h3, h4, h5, h6,
+.h2, .h3, .h4, .h5, .h6{
+    font-family: Continuum, sans-serif;
+}
+
+.navbar-brand {
+    text-transform: lowercase;
+}
+
+.btn{
+    border-radius: 0;
+}
+
+header.jumbotron {
+    background: transparent;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+h1.display-4 {
+    font-size: 3.5em;
+}
+
+.card {
+    border: none;
+}
+
+.breadcrumb{
+    background: none;
+    font-size: .75em;
+    padding-left: 0;
+
+}
+
+@media(min-width: 992px){
+    header.jumbotron h1{
+        font-size: 6em;
+    }
+}
+
+@media (min-width: 1200px) {
+    header.jumbotron h1 {
+        text-align: center;
+    }
+
+    header.jumbotron h1 > img.img-fluid {
+        /*width: 50%;*/
+    }
+}
+
+
