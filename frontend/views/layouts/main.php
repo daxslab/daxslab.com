@@ -19,7 +19,7 @@ $menuItems = isset($mainMenu)
             'label' => $item->label,
             'url' => $item->url,
         ];
-    }, $mainMenu->menuItems)
+    }, $mainMenu->getMenuItems(Yii::$app->language)->all())
     : [];
 
 $yearString = Yii::$app->params['year'] != date('Y')
