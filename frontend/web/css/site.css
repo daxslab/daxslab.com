@@ -45,6 +45,14 @@ h1.display-4 {
 
 }
 
+.landing > div > section{
+    padding: 4em 0;
+}
+
+.landing > div > section:nth-child(odd){
+    background: rgba(66, 141, 209, .05);
+}
+
 /* Or apply it via media query */
 @media (prefers-color-scheme: dark) {
     body {
@@ -74,6 +82,14 @@ h1.display-4 {
 @media (min-width: 992px) {
     header.jumbotron h1 {
         font-size: 6em;
+    }
+
+    .landing > div > section header > .container{
+        padding-right: 40%;
+    }
+
+    .landing > div > section header h2{
+        font-size: 4em;
     }
 }
 

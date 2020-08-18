@@ -14,6 +14,6 @@ use yii\helpers\Html;
     </div>
 </div>
 
-<?php if (($index + 1) % 2 == 0): ?>
+<?php if (($index + 1) % $columns == 0): ?>
     <div class="w-100"></div>
 <?php endif; ?>

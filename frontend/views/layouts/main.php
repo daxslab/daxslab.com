@@ -75,15 +75,20 @@ AppAsset::register($this);
 <footer class="footer py-4">
     <div class="container">
         <h2 class="mb-4"><?= Yii::t('app', 'Do you have a software project idea? Contact Us!') ?></h2>
-        <?= Yii::$app->runAction('/contactForm/default/contact', ['renderPartial' => true]) ?>
-
-        <ul class="list-inline fa-2x pt-2">
-            <li class="list-inline-item"><?= Html::a(Html::tag('i', false, ['class' => 'fab fa-facebook fa-fw']), Yii::$app->params['contacts']['facebook']) ?></li>
-            <li class="list-inline-item"><?= Html::a(Html::tag('i', false, ['class' => 'fab fa-twitter fa-fw']), Yii::$app->params['contacts']['twitter']) ?></li>
-            <li class="list-inline-item"><?= Html::a(Html::tag('i', false, ['class' => 'fab fa-instagram fa-fw']), Yii::$app->params['contacts']['instagram']) ?></li>
-            <li class="list-inline-item"><?= Html::a(Html::tag('i', false, ['class' => 'fab fa-linkedin fa-fw']), Yii::$app->params['contacts']['linkedin']) ?></li>
-            <li class="list-inline-item"><?= Html::a(Html::tag('i', false, ['class' => 'fab fa-telegram fa-fw']), Yii::$app->params['contacts']['telegram']) ?></li>
-        </ul>
+        <div class="row">
+            <div class="col-md-6">
+                <ul class="list-inline fa-2x pt-2">
+                    <li class="list-inline-item"><?= Html::a(Html::tag('i', false, ['class' => 'fab fa-facebook fa-fw']), Yii::$app->params['contacts']['facebook']) ?></li>
+                    <li class="list-inline-item"><?= Html::a(Html::tag('i', false, ['class' => 'fab fa-twitter fa-fw']), Yii::$app->params['contacts']['twitter']) ?></li>
+                    <li class="list-inline-item"><?= Html::a(Html::tag('i', false, ['class' => 'fab fa-instagram fa-fw']), Yii::$app->params['contacts']['instagram']) ?></li>
+                    <li class="list-inline-item"><?= Html::a(Html::tag('i', false, ['class' => 'fab fa-linkedin fa-fw']), Yii::$app->params['contacts']['linkedin']) ?></li>
+                    <li class="list-inline-item"><?= Html::a(Html::tag('i', false, ['class' => 'fab fa-telegram fa-fw']), Yii::$app->params['contacts']['telegram']) ?></li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <?= Yii::$app->runAction('/contactForm/default/contact', ['renderPartial' => true]) ?>
+            </div>
+        </div>
 
         <p class="pt-2 mb-0">
             <small class="text-muted">

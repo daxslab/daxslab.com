@@ -19,6 +19,7 @@ use yii\helpers\Html;
                 'options' => ['class' => 'card-deck'],
                 'itemView' => "category-item",
                 'itemOptions' => ['tag' => false],
+                'viewParams' => ['columns' => isset($columns) ? $columns : 3],
             ]) ?>
         <?php endif; ?>
 
