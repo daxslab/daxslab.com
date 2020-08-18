@@ -15,6 +15,7 @@ return [
         'website' => [
             'class' => 'daxslab\website\Module',
             'cacheThumbnails' => true,
+            'languages' => ['en', 'es'],
         ],
         'user' => [
             'class' => 'Da\User\Module',
