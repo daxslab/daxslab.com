@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use daxslab\website\models\Page;
 use yii\web\Controller;
 
 /**
