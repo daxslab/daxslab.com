@@ -12,10 +12,22 @@ $this->image = $model->image;
 <header class="jumbotron">
     <div class="container">
         <h1 class="display-3">
-            <?= Html::img("@web/images/daxslab.png", [
-                'alt' => $this->title,
-                'class' => 'img-fluid',
-            ]) ?>
+            <picture>
+                <!-- Use this image if the user's OS setting is light or unset -->
+                <?= Html::tag('source', false, [
+                    'srcset' => '/images/daxslab-color.png',
+                    'media' => '(prefers-color-scheme: light) or (prefers-color-scheme: no-preference)',
+                ]) ?>
+                <!-- Use this image if the user's OS setting is dark -->
+                <?= Html::tag('source', false, [
+                    'srcset' => '/images/daxslab-white.png',
+                    'media' => '(prefers-color-scheme: dark)',
+                ]) ?>
+                <?= Html::img("@web/images/daxslab-color.png", [
+                    'alt' => $this->title,
+                    'class' => 'img-fluid',
+                ]) ?>
+            </picture>
         </h1>
     </div>
 </header>

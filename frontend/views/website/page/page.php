@@ -19,6 +19,15 @@ use daxslab\website\widgets\PageWidgetizer;
             ]) ?>
         <?php endif; ?>
 
+        <?php if ($model->image): ?>
+            <?= Html::img($model->image, [
+                'class' => 'img-fluid',
+                'alt' => Yii::t('app', 'Image on project {name}', [
+                    'name' => $model->title,
+                ]),
+            ]) ?>
+        <?php endif; ?>
+
         <?php if ($dataProvider->query->exists()): ?>
             <?= \yii\widgets\ListView::widget([
                 'layout' => '{items}{pager}',
