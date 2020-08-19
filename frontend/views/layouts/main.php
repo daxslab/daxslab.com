@@ -51,32 +51,33 @@ AppAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
 
-    <?php
-    NavBar::begin([
-        'brandLabel' => Yii::t('app', 'Daxslab{slogan}', [
-            'slogan' => Html::tag('span', Yii::t('app', ', software solutions'), [
-                'class' => 'd-none d-md-inline',
-            ]),
+<?php
+NavBar::begin([
+    'id' => 'main-navbar',
+    'brandLabel' => Yii::t('app', 'Daxslab{slogan}', [
+        'slogan' => Html::tag('span', Yii::t('app', ', software solutions'), [
+            'class' => 'd-none d-md-inline',
         ]),
-        'brandUrl' => Yii::$app->homeUrl,
-        'options' => [
-            'class' => 'navbar navbar-expand-md navbar-light bg-white fixed-top',
-        ],
-    ]);
-    echo Nav::widget([
-        'options' => ['class' => 'navbar-nav ml-auto'],
-        'items' => $menuItems,
-    ]);
-    NavBar::end();
-    ?>
+    ]),
+    'brandUrl' => Yii::$app->homeUrl,
+    'options' => [
+        'class' => 'navbar navbar-expand-md navbar-light bg-white no-shadow fixed-top',
+    ],
+]);
+echo Nav::widget([
+    'options' => ['class' => 'navbar-nav ml-auto'],
+    'items' => $menuItems,
+]);
+NavBar::end();
+?>
 
-    <?= $content ?>
+<?= $content ?>
 
-<footer class="footer py-4">
+<footer class="footer">
     <div class="container">
-        <h2 class="mb-4"><?= Yii::t('app', 'Do you have a software project idea? Contact Us!') ?></h2>
         <div class="row">
             <div class="col-md-6">
+                <h2 class="mb-4"><?= Yii::t('app', 'Do you have a software project idea? Contact Us!') ?></h2>
                 <ul class="list-inline fa-2x pt-2">
                     <li class="list-inline-item"><?= Html::a(Html::tag('i', false, ['class' => 'fab fa-facebook fa-fw']), Yii::$app->params['contacts']['facebook']) ?></li>
                     <li class="list-inline-item"><?= Html::a(Html::tag('i', false, ['class' => 'fab fa-twitter fa-fw']), Yii::$app->params['contacts']['twitter']) ?></li>
@@ -91,11 +92,9 @@ AppAsset::register($this);
         </div>
 
         <p class="pt-2 mb-0">
-            <small class="text-muted">
-                &copy; <?= Yii::t('app', 'Developed by {vendor}', [
-                    'vendor' => Html::a('Daxslab', 'https://www.daxslab.com', ['target' => '_blank']),
-                ]) ?> (<?= $yearString ?>)
-            </small>
+            &copy; <?= Yii::t('app', 'Developed by {vendor}', [
+                'vendor' => Html::a('Daxslab', 'https://www.daxslab.com', ['target' => '_blank']),
+            ]) ?> (<?= $yearString ?>)
         </p>
     </div>
 </footer>

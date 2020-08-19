@@ -1,8 +1,42 @@
 body {
-    padding-top: 87px;
+    padding-top: 73px;
     color: #300a24;
     font-family: Roboto, sans-serif;
-    font-size: 18px;
+    background-image: url('/images/keyboard-white.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+body > main{
+    background-color: rgba(255, 255, 255, .95);
+}
+
+body, h1, h2, h3, h4, h5, h6, p.lead{
+    font-size: 20px;
+}
+
+h1{
+    font-size: 2.25em;
+}
+
+h2{
+    font-size: 2em;
+}
+
+h3{
+    font-size: 1.5em;
+}
+
+
+h2, h3, h4, h5, h6,
+.h2, .h3, .h4, .h5, .h6 {
+    font-family: Continuum, sans-serif;
+    color: #428dd1;
+}
+
+a{
+    color: #428dd1;
 }
 
 .navbar, .btn, h1, .h1 {
@@ -11,27 +45,27 @@ body {
     font-weight: normal;
 }
 
-h2, h3, h4, h5, h6,
-.h2, .h3, .h4, .h5, .h6 {
-    font-family: Continuum, sans-serif;
+.lead{
+    font-size: 1em;
 }
 
 .navbar-brand {
     text-transform: lowercase;
+    font-size: 1em;
+}
+
+.navbar.navbar-light.bg-white.no-shadow{
+    background-color: rgba(255, 255, 255, .95) !important;
+    transition: all 1s;
+}
+
+.no-shadow {
+    box-shadow: none;
+    transition: all 1s;
 }
 
 .btn {
     border-radius: 0;
-}
-
-header.jumbotron {
-    background: transparent;
-    padding-right: 0;
-    padding-left: 0;
-}
-
-h1.display-4 {
-    font-size: 3.5em;
 }
 
 .card {
@@ -42,22 +76,56 @@ h1.display-4 {
     background: none;
     font-size: .75em;
     padding-left: 0;
-
 }
 
-.landing > div > section{
-    padding: 4em 0;
+.jumbotron {
+    background: transparent;
+    padding-right: 0;
+    padding-left: 0;
 }
 
-.landing > div > section:nth-child(odd){
-    background: rgba(66, 141, 209, .05);
+h1.display-4 {
+    font-size: 3.5em;
+}
+
+.landing > div > section {
+    padding: 2em 0;
+}
+
+.landing > div > section:nth-child(odd) {
+    background: rgba(66, 141, 209, .1);
+}
+
+.landing > div > section header {
+    margin-bottom: 1em;
+}
+
+body > footer {
+    padding: 3em 0 2em;
+}
+
+body > footer, body > footer h2{
+    color: #300a24;
 }
 
 /* Or apply it via media query */
 @media (prefers-color-scheme: dark) {
     body {
-        background: #300a24;
         color: #fff;
+        background-image: url('/images/keyboard-black.jpg');
+    }
+
+    body > main{
+        background-color: rgba(48, 10, 36, .95);
+    }
+
+    body > footer input::placeholder,
+    body > footer textarea::placeholder {
+        color: rgba(255, 255, 255, .5) !important;
+    }
+
+    .navbar.navbar-light.bg-white.no-shadow{
+        background-color: rgba(48, 10, 36, .95) !important;
     }
 
     .navbar.navbar-light.bg-white {
@@ -77,6 +145,7 @@ h1.display-4 {
     .card {
         background: #300a24;
     }
+
 }
 
 @media (min-width: 992px) {
@@ -84,13 +153,22 @@ h1.display-4 {
         font-size: 6em;
     }
 
-    .landing > div > section header > .container{
-        padding-right: 40%;
+    .landing > div > section {
+        padding: 3em 0;
     }
 
-    .landing > div > section header h2{
+    .landing > div > section header > .container {
+        padding-right: 30%;
+    }
+
+    .landing > div > section header h2 {
         font-size: 4em;
     }
+
+    body > footer h2 {
+        font-size: 2.5em;
+    }
+
 }
 
 @media (min-width: 1200px) {
@@ -98,8 +176,8 @@ h1.display-4 {
         text-align: center;
     }
 
-    header.jumbotron h1 > img.img-fluid {
-        /*width: 50%;*/
+    .landing > div > section {
+        padding: 4em 0;
     }
 }
 
