@@ -100,6 +100,17 @@ h1.display-4 {
     margin-bottom: 1em;
 }
 
+#reviews{
+}
+
+#reviews blockquote{
+    text-align: center;
+}
+
+#reviews .carousel-item{
+    padding: 2em 30% 1em;
+}
+
 body > footer {
     padding: 3em 0 2em;
 }
