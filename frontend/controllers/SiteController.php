@@ -44,4 +44,8 @@ class SiteController extends Controller
         ]);
     }
 
+    public function actionSocialLinks(){
+        return $this->renderPartial('social-links');
+    }
+
 }

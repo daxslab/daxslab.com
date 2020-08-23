@@ -73,29 +73,34 @@ NavBar::end();
 
 <?= $content ?>
 
-<footer class="footer">
+<footer>
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <h2 class="mb-4"><?= Yii::t('app', 'Do you have a software project idea? Contact Us!') ?></h2>
-                <ul class="list-inline fa-2x pt-2">
-                    <li class="list-inline-item"><?= Html::a(Html::tag('i', false, ['class' => 'fab fa-facebook fa-fw']), Yii::$app->params['contacts']['facebook']) ?></li>
-                    <li class="list-inline-item"><?= Html::a(Html::tag('i', false, ['class' => 'fab fa-twitter fa-fw']), Yii::$app->params['contacts']['twitter']) ?></li>
-                    <li class="list-inline-item"><?= Html::a(Html::tag('i', false, ['class' => 'fab fa-instagram fa-fw']), Yii::$app->params['contacts']['instagram']) ?></li>
-                    <li class="list-inline-item"><?= Html::a(Html::tag('i', false, ['class' => 'fab fa-linkedin fa-fw']), Yii::$app->params['contacts']['linkedin']) ?></li>
-                    <li class="list-inline-item"><?= Html::a(Html::tag('i', false, ['class' => 'fab fa-telegram fa-fw']), Yii::$app->params['contacts']['telegram']) ?></li>
-                </ul>
+                <h2 class="mb-4"><?= Yii::t('app', 'Contact Us!') ?></h2>
+                <address>
+                    <strong><?= Yii::$app->params['contacts']['owner'] ?></strong><br>
+                    <abbr title="Phone">P:</abbr> <?= Yii::$app->params['contacts']['mobile'] ?>
+                </address>
             </div>
             <div class="col-md-6">
+                <h3><?= Yii::t('app', 'Send a message') ?></h3>
+                <p><?= Yii::t('app', 'If you are interesented in develop a new project or update and existing one, don\'t hesitate in contacting us.') ?></p>
                 <?= Yii::$app->runAction('/contactForm/default/contact', ['renderPartial' => true]) ?>
             </div>
         </div>
-
-        <p class="pt-2 mb-0">
-            &copy; <?= Yii::t('app', 'Developed by {vendor}', [
-                'vendor' => Html::a('Daxslab', 'https://www.daxslab.com', ['target' => '_blank']),
-            ]) ?> (<?= $yearString ?>)
-        </p>
+    </div>
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <?= $this->render('//site/social-links') ?>
+                </div>
+                <div class="col-md-6">
+                    &copy; Daxslab (<?= $yearString ?>)
+                </div>
+            </div>
+        </div>
     </div>
 </footer>
 

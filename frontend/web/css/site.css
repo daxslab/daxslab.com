@@ -1,5 +1,5 @@
 body {
-    padding-top: 73px;
+    padding-top: 70px;
     color: #300a24;
     font-family: Roboto, sans-serif;
     background-image: url('/images/keyboard-white.jpg');
@@ -8,23 +8,24 @@ body {
     background-attachment: fixed;
 }
 
-body > main{
-    background-color: rgba(255, 255, 255, .95);
+body > main,
+body > article {
+    background-color: rgba(255, 255, 255, .9);
 }
 
-body, h1, h2, h3, h4, h5, h6, p.lead{
-    font-size: 20px;
+body, h1, h2, h3, h4, h5, h6, p.lead {
+    font-size: 18px;
 }
 
-h1{
+h1 {
     font-size: 2.25em;
 }
 
-h2{
+h2 {
     font-size: 2em;
 }
 
-h3{
+h3 {
     font-size: 1.5em;
 }
 
@@ -35,7 +36,7 @@ h2, h3, h4, h5, h6,
     color: #428dd1;
 }
 
-a{
+a {
     color: #428dd1;
 }
 
@@ -45,7 +46,7 @@ a{
     font-weight: normal;
 }
 
-.lead{
+.lead {
     font-size: 1em;
 }
 
@@ -54,8 +55,8 @@ a{
     font-size: 1em;
 }
 
-.navbar.navbar-light.bg-white.no-shadow{
-    background-color: rgba(255, 255, 255, .95) !important;
+.navbar.navbar-light.bg-white.no-shadow {
+    background-color: rgba(255, 255, 255, .9) !important;
     transition: all 1s;
 }
 
@@ -82,6 +83,7 @@ a{
     background: transparent;
     padding-right: 0;
     padding-left: 0;
+    border-radius: 0;
 }
 
 h1.display-4 {
@@ -92,31 +94,72 @@ h1.display-4 {
     padding: 2em 0;
 }
 
+body > article > header.jumbotron,
 .landing > div > section:nth-child(odd) {
-    background: rgba(66, 141, 209, .1);
+    background: rgba(66, 141, 209, .75);
+}
+
+body > article > header h1 {
+    color: #fff;
+}
+
+.landing > div > section:nth-child(odd) .list-social {
+    font-size: 2em;
+}
+
+.landing > div > section:nth-child(odd) a {
+    color: #fff;
+}
+
+.landing > div > section:nth-child(odd) header,
+.landing > div > section:nth-child(odd) h2 {
+    color: #fff;
 }
 
 .landing > div > section header {
     margin-bottom: 1em;
 }
 
-#reviews{
-}
-
-#reviews blockquote{
+#reviews blockquote {
     text-align: center;
 }
 
-#reviews .carousel-item{
-    padding: 2em 30% 1em;
+#reviews .carousel-item {
+    padding: 2em 10%;
 }
 
 body > footer {
-    padding: 3em 0 2em;
+    padding: 3em 0 0;
 }
 
-body > footer, body > footer h2{
+body > footer h2,
+body > footer h3 {
     color: #300a24;
+}
+
+body > footer input::placeholder,
+body > footer textarea::placeholder {
+    color: rgba(48, 10, 36, 0.75) !important;
+}
+
+body > footer > div:nth-child(1) {
+    margin-bottom: 1.5em;
+}
+
+body > footer > div:nth-child(2) {
+    background: #300a24;
+    color: #fff;
+    font-size: 0.75em;
+    text-align: center;
+    padding: 1em 0;
+}
+
+body > footer .list-social a {
+    color: #fff;
+}
+
+.list-social {
+    margin-bottom: 0;
 }
 
 /* Or apply it via media query */
@@ -126,8 +169,13 @@ body > footer, body > footer h2{
         background-image: url('/images/keyboard-black.jpg');
     }
 
-    body > main{
+    body > main,
+    body > article {
         background-color: rgba(48, 10, 36, .95);
+    }
+
+    body > footer, body > footer h2, body > footer h3 {
+        color: #fff;
     }
 
     body > footer input::placeholder,
@@ -135,7 +183,7 @@ body > footer, body > footer h2{
         color: rgba(255, 255, 255, .5) !important;
     }
 
-    .navbar.navbar-light.bg-white.no-shadow{
+    .navbar.navbar-light.bg-white.no-shadow {
         background-color: rgba(48, 10, 36, .95) !important;
     }
 
@@ -157,9 +205,18 @@ body > footer, body > footer h2{
         background: #300a24;
     }
 
+    .landing > div > section:nth-child(odd) {
+        background: rgba(66, 141, 209, .1);
+    }
+
 }
 
 @media (min-width: 992px) {
+
+    body {
+        padding-top: 88px;
+    }
+
     header.jumbotron h1 {
         font-size: 6em;
     }
@@ -178,6 +235,18 @@ body > footer, body > footer h2{
 
     body > footer h2 {
         font-size: 2.5em;
+    }
+
+    body > footer > div:nth-child(2) > div > div > div:nth-child(1) {
+        text-align: left;
+    }
+
+    body > footer > div:nth-child(2) > div > div > div:nth-child(2) {
+        text-align: right;
+    }
+
+    #reviews .carousel-item {
+        padding: 2em 30%;
     }
 
 }
