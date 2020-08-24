@@ -16,6 +16,7 @@ $techs = array_unique(explode(', ', join(', ', \daxslab\website\models\Metadata:
     ->andWhere("page.parent_id = '{$model->id}'")
     ->select('value')
     ->column())));
+sort($techs);
 
 ?>
 
@@ -36,7 +37,14 @@ $techs = array_unique(explode(', ', join(', ', \daxslab\website\models\Metadata:
         <h2><?= Yii::t('app', 'Our Stack') ?></h2>
         <ul class="list-inline">
             <?php foreach ($techs as $tech): ?>
-                <li class="list-inline-item"><?= $tech ?></li>
+                <li class="list-inline-item">
+                    <?= Html::img("@web/images/tech/{$tech}.png", [
+                        'width' => '100px',
+                        'alt' => Yii::t('app', 'Daxslab uses {tech} for their projects', [
+                            'tech' => $tech
+                        ])
+                    ]) ?>
+                </li>
             <?php endforeach; ?>
         </ul>
 

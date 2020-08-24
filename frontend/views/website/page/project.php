@@ -3,6 +3,9 @@
 use yii\helpers\Html;
 use daxslab\website\widgets\PageWidgetizer;
 
+$techs = explode(', ', $model->getMetadata('tech'));
+sort($techs);
+
 ?>
 
 <article id="<?= $model->slug ?>" class="<?= $model->type->name ?>">
@@ -31,18 +34,29 @@ use daxslab\website\widgets\PageWidgetizer;
                             'format' => 'url',
                             'visible' => $model->getMetadata('url') != null,
                         ],
-                        [
-                            'label' => Yii::t('app', 'Tech'),
-                            'value' => $model->getMetadata('tech'),
-                        ],
                     ]
                 ]) ?>
+
+                <h2><?= Yii::t('app', 'Tech')?></h2>
+                <ul class="list-inline">
+                    <?php foreach ($techs as $tech): ?>
+                        <li class="list-inline-item">
+                            <?= Html::img("@web/images/tech/{$tech}.png", [
+                                'width' => '100px',
+                                'alt' => Yii::t('app', 'Daxslab uses {tech} for their projects', [
+                                    'tech' => $tech
+                                ])
+                            ]) ?>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+
             </div>
             <div class="col-md-6">
                 <?php if ($model->image): ?>
                     <?= Html::img($model->image, [
                         'class' => 'img-fluid',
-                        'alt' => Yii::t('app', 'Image on project {name}', [
+                        'alt' => Yii::t('app', 'Image on project {name} developed by Daxslab', [
                             'name' => $model->title,
                         ]),
                     ]) ?>

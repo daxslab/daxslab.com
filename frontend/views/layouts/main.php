@@ -81,7 +81,7 @@ NavBar::end();
     <div class="container">
         <h2 class="mb-4"><?= Yii::t('app', 'Contact Us!') ?></h2>
         <p>
-            <?= Yii::t('app', 'If you are interesented in develop a new project or update and existing one, don\'t hesitate in contacting us.') ?>
+            <?= Yii::t('app', 'If you are interested in develop a new project or update and existing one, don\'t hesitate in contacting us.') ?>
         </p>
         <p>
             <?= Html::a(Yii::t('app', 'Send a message'), ['/contact/default/index'], [
