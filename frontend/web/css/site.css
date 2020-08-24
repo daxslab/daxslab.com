@@ -10,7 +10,7 @@ body {
 
 body > main,
 body > article {
-    background-color: rgba(255, 255, 255, .9);
+    background-color: #fff;
 }
 
 body, h1, h2, h3, h4, h5, h6, p.lead {
@@ -56,8 +56,7 @@ a {
 }
 
 .navbar.navbar-light.bg-white.no-shadow {
-    background-color: rgba(255, 255, 255, .9) !important;
-    transition: all 1s;
+    transition: all 2s;
 }
 
 .no-shadow {
@@ -94,6 +93,10 @@ h1.display-4 {
     padding: 2em 0;
 }
 
+body > article{
+    padding-bottom: 1em;
+}
+
 body > article > header.jumbotron,
 .landing > div > section:nth-child(odd) {
     background: rgba(66, 141, 209, .75);
@@ -107,7 +110,7 @@ body > article > header h1 {
     font-size: 2em;
 }
 
-.landing > div > section:nth-child(odd) a {
+.landing > div > section:nth-child(odd) a:not(.btn) {
     color: #fff;
 }
 
@@ -129,37 +132,19 @@ body > article > header h1 {
 }
 
 body > footer {
-    padding: 3em 0 0;
+    padding: 3em 0 1.5em;
 }
 
-body > footer h2,
-body > footer h3 {
+body > footer h2 {
     color: #300a24;
-}
-
-body > footer input::placeholder,
-body > footer textarea::placeholder {
-    color: rgba(48, 10, 36, 0.75) !important;
-}
-
-body > footer > div:nth-child(1) {
-    margin-bottom: 1.5em;
-}
-
-body > footer > div:nth-child(2) {
-    background: #300a24;
-    color: #fff;
-    font-size: 0.75em;
-    text-align: center;
-    padding: 1em 0;
 }
 
 body > footer .list-social a {
     color: #fff;
+    font-size: 1.5em;
 }
 
 .list-social {
-    margin-bottom: 0;
 }
 
 /* Or apply it via media query */
@@ -171,20 +156,16 @@ body > footer .list-social a {
 
     body > main,
     body > article {
-        background-color: rgba(48, 10, 36, .95);
+        background-color: #300a24;
     }
 
-    body > footer, body > footer h2, body > footer h3 {
+    body > footer,
+    body > footer h2 {
         color: #fff;
     }
 
-    body > footer input::placeholder,
-    body > footer textarea::placeholder {
-        color: rgba(255, 255, 255, .5) !important;
-    }
-
     .navbar.navbar-light.bg-white.no-shadow {
-        background-color: rgba(48, 10, 36, .95) !important;
+        background: #300a24 !important;
     }
 
     .navbar.navbar-light.bg-white {
@@ -193,7 +174,7 @@ body > footer .list-social a {
 
     .navbar-light .navbar-brand,
     .navbar-light .navbar-nav .nav-link {
-        color: rgba(255, 255, 255, 0.75);
+        color: #fff;
     }
 
     .navbar-light .navbar-brand:hover,
@@ -225,6 +206,7 @@ body > footer .list-social a {
         padding: 3em 0;
     }
 
+    body > footer > .container,
     .landing > div > section header > .container {
         padding-right: 30%;
     }
@@ -235,14 +217,6 @@ body > footer .list-social a {
 
     body > footer h2 {
         font-size: 2.5em;
-    }
-
-    body > footer > div:nth-child(2) > div > div > div:nth-child(1) {
-        text-align: left;
-    }
-
-    body > footer > div:nth-child(2) > div > div > div:nth-child(2) {
-        text-align: right;
     }
 
     #reviews .carousel-item {

@@ -19,5 +19,6 @@ return [
         'linkedin' => 'https://linkedin.com/company/daxslab',
         'whatsapp' => 'https://ws.me/5358074332',
         'telegram' => 'https://t.me/daxslab',
+        'github' => 'https://github.com/daxslab',
     ]
 ];

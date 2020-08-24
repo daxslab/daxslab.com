@@ -21,6 +21,10 @@ $menuItems = isset($mainMenu)
         ];
     }, $mainMenu->getMenuItems(Yii::$app->language)->all())
     : [];
+$menuItems[] = [
+    'label' => Yii::t('app', 'Contact'),
+    'url' => ['/contact/default/index'],
+];
 
 $yearString = Yii::$app->params['year'] != date('Y')
     ? Yii::$app->params['year'] . ' - ' . date('Y')
@@ -75,32 +79,22 @@ NavBar::end();
 
 <footer>
     <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <h2 class="mb-4"><?= Yii::t('app', 'Contact Us!') ?></h2>
-                <address>
-                    <strong><?= Yii::$app->params['contacts']['owner'] ?></strong><br>
-                    <abbr title="Phone">P:</abbr> <?= Yii::$app->params['contacts']['mobile'] ?>
-                </address>
-            </div>
-            <div class="col-md-6">
-                <h3><?= Yii::t('app', 'Send a message') ?></h3>
-                <p><?= Yii::t('app', 'If you are interesented in develop a new project or update and existing one, don\'t hesitate in contacting us.') ?></p>
-                <?= Yii::$app->runAction('/contactForm/default/contact', ['renderPartial' => true]) ?>
-            </div>
-        </div>
-    </div>
-    <div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <?= $this->render('//site/social-links') ?>
-                </div>
-                <div class="col-md-6">
-                    &copy; Daxslab (<?= $yearString ?>)
-                </div>
-            </div>
-        </div>
+        <h2 class="mb-4"><?= Yii::t('app', 'Contact Us!') ?></h2>
+        <p>
+            <?= Yii::t('app', 'If you are interesented in develop a new project or update and existing one, don\'t hesitate in contacting us.') ?>
+        </p>
+        <p>
+            <?= Html::a(Yii::t('app', 'Send a message'), ['/contact/default/index'], [
+                'class' => 'btn btn-secondary',
+                'title' => Yii::t('app', 'Contact with {app}', ['app' => Yii::$app->name]),
+            ]) ?>
+            <?= Html::a(Yii::$app->params['contacts']['mobile'], 'tel:' . Yii::$app->params['contacts']['mobile'], [
+                'class' => 'btn btn-secondary',
+                'title' => Yii::t('app', 'Call us at {app}', ['app' => Yii::$app->name]),
+            ]) ?>
+        </p>
+        <?= $this->render('//site/social-links') ?>
+        &copy; Daxslab (<?= $yearString ?>)
     </div>
 </footer>
 

@@ -30,7 +30,7 @@ class SiteController extends Controller
                 'author' => 'Dainery Sánchez. CEO, Bellísima Studio',
             ],
             [
-                'text' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquid atque blanditiis commodi cumque et eveniet fugit id laudantium molestiae nam nesciunt odit quos reprehenderit similique sint veritatis vero, vitae?',
+                'text' => 'De DAXSLAB es necesario destacar el servicio personalizado, la capacidad para interpretar la idea del cliente y darle forma con sus métodos. En segundo lugar, el tiempo que le dedican a cada cliente: el trabajo solo termina cuando el cliente está satisfecho. Estamos muy contentos con ellos y su trabajo',
                 'author' => 'Alain González. Fundador, Albor Arquitectos',
             ],
             [
