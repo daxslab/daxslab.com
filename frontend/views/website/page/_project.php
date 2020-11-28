@@ -2,18 +2,21 @@
 
 use yii\helpers\Html;
 
+$linkContent = $model->image
+    ? Html::img(Yii::$app->thumbnailer->get($model->image, 683, 384, 85), [
+        'class' => 'img-fluid card-img-top',
+        'alt' => Yii::t('app', 'Image on project {name} developed by Daxslab', [
+            'name' => $model->title,
+        ])
+    ])
+    : $model->title;
 ?>
 
-<div class="card mb-4">
-    <?php if($model->image): ?>
-    <?= Html::a(Html::img(Yii::$app->thumbnailer->get($model->image, 683, 384), ['class' => 'img-fluid']), $model->url) ?>
-    <?php endif; ?>
-    <div class="card-body">
-        <h3 class="card-title"><?= Html::a(Html::encode($model->title), $model->url) ?></h3>
-        <p class="card-text"><?= Html::encode($model->abstract) ?></p>
-    </div>
-</div>
+<article id="<?= $model->id ?>" class="card mb-4">
+    <?= Html::a($linkContent, $model->url, ['title' => $model->title]) ?>
+</article>
 
-<?php if (($index + 1) % 3 == 0): ?>
+<?php if (($index + 1) % 2 == 0): ?>
     <div class="w-100"></div>
 <?php endif; ?>
+

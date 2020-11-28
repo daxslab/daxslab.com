@@ -11,5 +11,6 @@ $this->image = $model->image;
 <header class="jumbotron">
     <div class="container">
         <h1><?= $this->title ?></h1>
+        <p class="lead"><?= $this->description ?></p>
     </div>
 </header>

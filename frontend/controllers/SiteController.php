@@ -2,7 +2,7 @@
 
 namespace frontend\controllers;
 
-use daxslab\website\models\Page;
+use daxslab\website\models\Metadata;
 use yii\web\Controller;
 
 /**
@@ -23,7 +23,8 @@ class SiteController extends Controller
         ];
     }
 
-    public function actionReviews(){
+    public function actionReviews()
+    {
         $reviews = [
             [
                 'text' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquid atque blanditiis commodi cumque et eveniet fugit id laudantium molestiae nam nesciunt odit quos reprehenderit similique sint veritatis vero, vitae?',
@@ -40,11 +41,23 @@ class SiteController extends Controller
         ];
 
         return $this->renderPartial('reviews', [
-            'reviews' =>$reviews,
+            'reviews' => $reviews,
         ]);
     }
 
-    public function actionSocialLinks(){
+    public function actionStack()
+    {
+        $techs = array_unique(explode(', ', join(', ', Metadata::find()
+            ->joinWith(['page', 'metadataDefinition'])
+            ->andWhere("metadata_definition.name = 'tech'")
+            ->select('value')
+            ->column())));
+        sort($techs);
+        return $this->renderPartial('stack', ['techs' => $techs]);
+    }
+
+    public function actionSocialLinks()
+    {
         return $this->renderPartial('social-links');
     }
 

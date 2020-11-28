@@ -1,16 +1,14 @@
 <?php
 
-/* @var $this \yii\web\View */
+/* @var $this View */
 
 /* @var $content string */
 
-use kartik\icons\Icon;
 use yii\helpers\Html;
 use yii\bootstrap4\Nav;
 use yii\bootstrap4\NavBar;
-use yii\bootstrap4\Breadcrumbs;
 use frontend\assets\AppAsset;
-use common\widgets\Alert;
+use yii\web\View;
 
 $mainMenu = Yii::$app->website->getMenu('main');
 $menuItems = isset($mainMenu)
@@ -65,7 +63,7 @@ NavBar::begin([
     ]),
     'brandUrl' => Yii::$app->homeUrl,
     'options' => [
-        'class' => 'navbar navbar-expand-md navbar-light bg-white no-shadow fixed-top',
+        'class' => 'navbar navbar-expand-md navbar-dark bg-dark no-shadow fixed-top',
     ],
 ]);
 echo Nav::widget([
@@ -76,6 +74,7 @@ NavBar::end();
 ?>
 
 <?= $content ?>
+
 
 <footer>
     <div class="container">

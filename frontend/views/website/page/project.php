@@ -16,15 +16,22 @@ sort($techs);
             'links' => \daxslab\website\components\Lookup::getBreadcrumbsForPage($model, true),
         ]) ?>
 
+        <?php if ($model->image): ?>
+            <?= Html::img($model->image, [
+                'class' => 'img-fluid mb-4',
+                'alt' => Yii::t('app', 'Image on project {name} developed by Daxslab', [
+                    'name' => $model->title,
+                ]),
+            ]) ?>
+        <?php endif; ?>
+
         <div class="row">
             <div class="col-md-6">
-
                 <?php if ($model->body): ?>
                     <?= PageWidgetizer::widget([
                         'body' => $model->body
                     ]) ?>
                 <?php endif; ?>
-
                 <?= \yii\widgets\DetailView::widget([
                     'model' => $model,
                     'attributes' => [
@@ -36,8 +43,9 @@ sort($techs);
                         ],
                     ]
                 ]) ?>
-
-                <h2><?= Yii::t('app', 'Tech')?></h2>
+            </div>
+            <div class="col-md-6">
+                <h2 class="h5"><?= Yii::t('app', 'Tech involved') ?></h2>
                 <ul class="list-inline">
                     <?php foreach ($techs as $tech): ?>
                         <li class="list-inline-item">
@@ -50,19 +58,9 @@ sort($techs);
                         </li>
                     <?php endforeach; ?>
                 </ul>
-
-            </div>
-            <div class="col-md-6">
-                <?php if ($model->image): ?>
-                    <?= Html::img($model->image, [
-                        'class' => 'img-fluid',
-                        'alt' => Yii::t('app', 'Image on project {name} developed by Daxslab', [
-                            'name' => $model->title,
-                        ]),
-                    ]) ?>
-                <?php endif; ?>
             </div>
         </div>
 
     </div>
+
 </article>

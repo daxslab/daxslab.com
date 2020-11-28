@@ -31,12 +31,17 @@ $this->image = $model->image;
         <div class="row">
             <?php if ($model->getPages()->exists()): ?>
                 <?php foreach ($model->pages as $page): ?>
-                    <article class="col-md-6">
+                    <article class="col-md-6 my-4">
                         <header>
                             <h2><?= Html::encode($page->title) ?></h2>
                             <p class="lead"><?= Html::encode($page->abstract) ?></p>
                         </header>
-                        <?= \yii\helpers\HtmlPurifier::process($page->body) ?>
+                        <?php if ($page->body): ?>
+                            <?= \yii\helpers\HtmlPurifier::process($page->body) ?>
+                        <?php endif; ?>
+                        <?= Html::a(Yii::t('app', 'Request service'), ['site/request'], [
+                                'class' => 'btn btn-lg btn-block btn-secondary'
+                        ]) ?>
                     </article>
                 <?php endforeach; ?>
             <?php endif ?>

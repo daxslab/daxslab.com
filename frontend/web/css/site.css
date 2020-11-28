@@ -1,7 +1,7 @@
 body {
     padding-top: 79px;
     font-size: 18px;
-    font-family: Roboto, sans-serif;
+    font-family: "Asap", sans-serif;
     color: #300a24;
 }
 
@@ -33,21 +33,55 @@ h2 {
 }
 
 .jumbotron {
-    background: transparent;
+    background: #300a24;
     margin-bottom: 0;
+    border-radius: 0;
+    color: #fff;
+    text-align: center;
+}
+
+.jumbotron h1 {
+    color: #fff !important;
+    text-transform: lowercase;
+}
+
+.jumbotron .lead{
+    font-family: 'Continuum Medium', sans-serif;
+    font-weight: normal;
+}
+
+.navbar-brand {
+    font-family: Denmark;
+    text-transform: lowercase;
+}
+
+.navbar-dark.bg-dark {
+    background: #300a24 !important;
+}
+
+.navbar-light{
+    padding-top: 0;
+    padding-bottom: 0;
+    transition: padding-top 0.5s;
 }
 
 .navbar-light .navbar-brand {
-    font-family: Denmark;
-    text-transform: lowercase;
     color: #300a24;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #428dd1;
+}
+
+.navbar-nav .nav-link,
+.navbar-brand-slogan {
+    font-family: "Continuum Light";
+    font-weight: bold;
 }
 
 .navbar-light .navbar-nav .nav-link,
 .navbar-brand-slogan {
     color: #428dd1;
-    font-family: "Continuum Light";
-    font-weight: bold;
 }
 
 .breadcrumb {
@@ -56,16 +90,16 @@ h2 {
 }
 
 .btn {
-    font-family: Roboto, sans-serif;
+    font-family: "Asap", sans-serif;
 }
 
 .lead {
-    font-family: "Continuum Medium";
+    font-weight: 100;
     font-size: 1.25em;
 }
 
 h2.card-title,
-h3.card-title{
+h3.card-title {
     font-size: 1.5em;
 }
 
@@ -73,11 +107,16 @@ h3.card-title{
     font-size: .85em;
 }
 
-section.block{
+.no-shadow {
+    box-shadow: none;
+}
+
+section.block {
     margin: 2em 0;
 }
 
-@media (min-width: 776px) {
+
+@media (min-width: 992px) {
     body {
         padding-top: 91px;
         font-size: 20px;
@@ -96,7 +135,6 @@ section.block{
         font-size: 2.75em;
     }
 
-
     body > footer {
         padding-top: 6em;
         padding-bottom: 4em;
@@ -111,7 +149,18 @@ section.block{
         padding-bottom: 6em;
     }
 
+    .landing .jumbotron h1 {
+        font-size: 5em;
+        text-transform: uppercase;
+    }
+
     .service-item {
         margin: 4em 0;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 960px;
     }
 }

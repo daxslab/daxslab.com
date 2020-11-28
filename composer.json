@@ -23,7 +23,8 @@
     "daxslab/yii2-website-module": "~1.0.8",
     "daxslab/yii2-contactform-module": "^1.0",
     "2amigos/yii2-usuario": "~1.0",
-    "kartik-v/yii2-icons": "@dev"
+    "kartik-v/yii2-icons": "@dev",
+    "kv4nt/yii2-owl-carousel2": "*"
   },
   "require-dev": {
     "yiisoft/yii2-debug": "~2.1.0",
