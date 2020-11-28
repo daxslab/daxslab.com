@@ -16,7 +16,6 @@ use yii\helpers\Html;
             <?= \yii\widgets\ListView::widget([
                 'layout' => '{items}{pager}',
                 'dataProvider' => $dataProvider,
-                'options' => ['class' => 'card-deck'],
                 'itemView' => "service-item",
                 'itemOptions' => ['tag' => false],
                 'viewParams' => ['columns' => isset($columns) ? $columns : 3],

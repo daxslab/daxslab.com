@@ -59,8 +59,8 @@ AppAsset::register($this);
 NavBar::begin([
     'id' => 'main-navbar',
     'brandLabel' => Yii::t('app', 'Daxslab{slogan}', [
-        'slogan' => Html::tag('span', Yii::t('app', ', software solutions'), [
-            'class' => 'd-none d-md-inline',
+        'slogan' => Html::tag('span', Yii::t('app', ' | software solutions'), [
+            'class' => 'd-none d-md-inline navbar-brand-slogan',
         ]),
     ]),
     'brandUrl' => Yii::$app->homeUrl,
@@ -79,22 +79,32 @@ NavBar::end();
 
 <footer>
     <div class="container">
-        <h2 class="mb-4"><?= Yii::t('app', 'Contact Us!') ?></h2>
-        <p>
-            <?= Yii::t('app', 'If you are interested in develop a new project or update and existing one, don\'t hesitate in contacting us.') ?>
+        <div class="row">
+            <div class="col-md-5">
+                <h2 class="mb-4"><?= Yii::t('app', 'Contact Us!') ?></h2>
+                <p>
+                    <?= Yii::t('app', 'If you are interested in develop a new project or update and existing one please, let us know') ?>
+                </p>
+                <ul>
+                    <li>+53 58 074 332</li>
+                    <li>info@daxslab.com</li>
+                </ul>
+            </div>
+            <div class="col-md-5">
+                <h2 class="mb-4"><?= Yii::t('app', 'Navigate') ?></h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis dignissimos distinctio, doloremque
+                    dolores id quae temporibus veritatis! Blanditiis consequatur cum cupiditate dolores enim perferendis
+                    provident quia, ratione velit voluptatem! Natus?</p>
+            </div>
+            <div class="col-md-2">
+                <h2 class="mb-4"><?= Yii::t('app', 'Social') ?></h2>
+                <?= $this->render('//site/social-links') ?>
+            </div>
+        </div>
+        <p class="small">
+            <?= Html::a(Yii::t('app', 'Terms of use')) ?> - Copyright &copy; (<?= $yearString ?>) Daxslab
+            - <?= Yii::t('app', 'All right reserved') ?>
         </p>
-        <p>
-            <?= Html::a(Yii::t('app', 'Send a message'), ['/contact/default/index'], [
-                'class' => 'btn btn-secondary',
-                'title' => Yii::t('app', 'Contact with {app}', ['app' => Yii::$app->name]),
-            ]) ?>
-            <?= Html::a(Yii::$app->params['contacts']['mobile'], 'tel:' . Yii::$app->params['contacts']['mobile'], [
-                'class' => 'btn btn-secondary',
-                'title' => Yii::t('app', 'Call us at {app}', ['app' => Yii::$app->name]),
-            ]) ?>
-        </p>
-        <?= $this->render('//site/social-links') ?>
-        &copy; Daxslab (<?= $yearString ?>)
     </div>
 </footer>
 

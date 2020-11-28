@@ -1,238 +1,117 @@
 body {
-    padding-top: 70px;
-    color: #300a24;
-    font-family: Roboto, sans-serif;
-    background-image: url('/images/keyboard-white.jpg');
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-}
-
-body > main,
-body > article {
-    background-color: #fff;
-}
-
-body, h1, h2, h3, h4, h5, h6, p.lead {
+    padding-top: 79px;
     font-size: 18px;
+    font-family: Roboto, sans-serif;
+    color: #300a24;
+}
+
+body > footer {
+    padding-top: 3em;
+    padding-bottom: 2em;
+    font-size: .85em;
+}
+
+body > footer h2 {
+    border-bottom: 1px solid rgb(66, 141, 209, 0.4);
 }
 
 h1 {
-    font-size: 2.25em;
+    font-family: Denmark;
+}
+
+h2, h3, h4, h5, h6, .breadcrumb {
+    font-family: "Continuum Medium";
+}
+
+h1 {
+    font-size: 2.6em;
+    word-break: break-word;
 }
 
 h2 {
     font-size: 2em;
 }
 
-h3 {
-    font-size: 1.5em;
-}
-
-
-h2, h3, h4, h5, h6,
-.h2, .h3, .h4, .h5, .h6 {
-    font-family: Continuum, sans-serif;
-    color: #428dd1;
-}
-
-a {
-    color: #428dd1;
-}
-
-.navbar, .btn, h1, .h1 {
-    font-family: Denmark, sans-serif;
-    text-transform: lowercase;
-    font-weight: normal;
-}
-
-.lead {
-    font-size: 1em;
-}
-
-.navbar-brand {
-    text-transform: lowercase;
-    font-size: 1em;
-}
-
-.navbar.navbar-light.bg-white.no-shadow {
-    transition: all 2s;
-}
-
-.no-shadow {
-    box-shadow: none;
-    transition: all 1s;
-}
-
-.btn {
-    border-radius: 0;
-}
-
-.card {
-    border: none;
-}
-
-.breadcrumb {
-    background: none;
-    font-size: .75em;
-    padding-left: 0;
-}
-
 .jumbotron {
     background: transparent;
-    padding-right: 0;
-    padding-left: 0;
-    border-radius: 0;
+    margin-bottom: 0;
 }
 
-h1.display-4 {
-    font-size: 3.5em;
-}
-
-.landing > div > section {
-    padding: 2em 0;
-}
-
-body > article{
-    padding-bottom: 1em;
-}
-
-body > article > header.jumbotron,
-.landing > div > section:nth-child(odd) {
-    background: rgba(66, 141, 209, .75);
-}
-
-body > article > header h1 {
-    color: #fff;
-}
-
-.landing > div > section:nth-child(odd) .list-social {
-    font-size: 2em;
-}
-
-.landing > div > section:nth-child(odd) a:not(.btn) {
-    color: #fff;
-}
-
-.landing > div > section:nth-child(odd) header,
-.landing > div > section:nth-child(odd) h2 {
-    color: #fff;
-}
-
-.landing > div > section header {
-    margin-bottom: 1em;
-}
-
-#reviews blockquote {
-    text-align: center;
-}
-
-#reviews .carousel-item {
-    padding: 2em 10%;
-}
-
-body > footer {
-    padding: 3em 0 1.5em;
-}
-
-body > footer h2 {
+.navbar-light .navbar-brand {
+    font-family: Denmark;
+    text-transform: lowercase;
     color: #300a24;
 }
 
-body > footer .list-social a {
-    color: #fff;
+.navbar-light .navbar-nav .nav-link,
+.navbar-brand-slogan {
+    color: #428dd1;
+    font-family: "Continuum Light";
+    font-weight: bold;
+}
+
+.breadcrumb {
+    padding-left: 0;
+    background: transparent;
+}
+
+.btn {
+    font-family: Roboto, sans-serif;
+}
+
+.lead {
+    font-family: "Continuum Medium";
+    font-size: 1.25em;
+}
+
+h2.card-title,
+h3.card-title{
     font-size: 1.5em;
 }
 
-.list-social {
+.small {
+    font-size: .85em;
 }
 
-/* Or apply it via media query */
-@media (prefers-color-scheme: dark) {
+section.block{
+    margin: 2em 0;
+}
+
+@media (min-width: 776px) {
     body {
-        color: #fff;
-        background-image: url('/images/keyboard-black.jpg');
+        padding-top: 91px;
+        font-size: 20px;
     }
 
-    body > main,
-    body > article {
-        background-color: #300a24;
+    h1 {
+        font-size: 4.5em;
+        word-break: break-word;
     }
 
-    body > footer,
-    body > footer h2 {
-        color: #fff;
+    h2 {
+        font-size: 3em;
     }
 
-    .navbar.navbar-light.bg-white.no-shadow {
-        background: #300a24 !important;
+    h3 {
+        font-size: 2.75em;
     }
 
-    .navbar.navbar-light.bg-white {
-        background: #300a24 !important;
+
+    body > footer {
+        padding-top: 6em;
+        padding-bottom: 4em;
     }
 
-    .navbar-light .navbar-brand,
-    .navbar-light .navbar-nav .nav-link {
-        color: #fff;
+    body > footer .list-social {
+        font-size: 2em;
     }
 
-    .navbar-light .navbar-brand:hover,
-    .navbar-light .navbar-nav .nav-link:hover {
-        color: #fff;
+    .jumbotron {
+        padding-top: 4em;
+        padding-bottom: 6em;
     }
 
-    .card {
-        background: #300a24;
-    }
-
-    .landing > div > section:nth-child(odd) {
-        background: rgba(66, 141, 209, .1);
-    }
-
-}
-
-@media (min-width: 992px) {
-
-    body {
-        padding-top: 88px;
-    }
-
-    header.jumbotron h1 {
-        font-size: 6em;
-    }
-
-    .landing > div > section {
-        padding: 3em 0;
-    }
-
-    body > footer > .container,
-    .landing > div > section header > .container {
-        padding-right: 30%;
-    }
-
-    .landing > div > section header h2 {
-        font-size: 4em;
-    }
-
-    body > footer h2 {
-        font-size: 2.5em;
-    }
-
-    #reviews .carousel-item {
-        padding: 2em 30%;
-    }
-
-}
-
-@media (min-width: 1200px) {
-    header.jumbotron h1 {
-        text-align: center;
-    }
-
-    .landing > div > section {
-        padding: 4em 0;
+    .service-item {
+        margin: 4em 0;
     }
 }
-
-

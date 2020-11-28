@@ -28,8 +28,6 @@ sort($techs);
             'links' => \daxslab\website\components\Lookup::getBreadcrumbsForPage($model, true),
         ]) ?>
 
-
-
         <?= PageWidgetizer::widget([
             'body' => $model->body
         ]) ?>

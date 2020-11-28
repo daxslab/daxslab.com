@@ -10,7 +10,7 @@ use yii\helpers\Html;
         <p class="lead"><?= Html::encode($model->abstract) ?></p>
     </header>
     <p>
-        <?= Html::a(Yii::t('app', 'Read more...'), $model->url) ?>
+        <?= Html::a(Yii::t('app', 'Continue reading ->'), $model->url) ?>
     </p>
 </section>
 
