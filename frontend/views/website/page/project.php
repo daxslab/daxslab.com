@@ -64,3 +64,11 @@ sort($techs);
     </div>
 
 </article>
+
+<?php $this->beginBlock('prefooter') ?>
+<h2><?= Yii::t('app', 'did you liked it?') ?></h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus alias asperiores, autem consequatur delectus
+    dolorem ex expedita iste magnam minima modi mollitia perspiciatis possimus repellat saepe temporibus totam velit
+    voluptatibus!</p>
+<p><?= Html::a(Yii::t('app', 'Get in touch'), '#', ['class' => 'btn btn-lg btn-secondary']) ?></p>
+<?php $this->endBlock() ?>

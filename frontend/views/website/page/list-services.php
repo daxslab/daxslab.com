@@ -12,11 +12,9 @@ $this->image = $model->image;
 <article id="<?= $model->slug ?>" class="<?= $model->type->name ?>">
     <?= $this->render('_header', ['model' => $model]) ?>
     <div class="container">
-
         <?= \yii\bootstrap4\Breadcrumbs::widget([
             'links' => \daxslab\website\components\Lookup::getBreadcrumbsForPage($model, true),
         ]) ?>
-
         <div class="row">
             <div class="col-md-6">
                 <?php if ($model->body): ?>
@@ -28,25 +26,57 @@ $this->image = $model->image;
             <div class="col-md-6">
             </div>
         </div>
-        <div class="row">
+    </div>
+
+    <div class="bg-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2><?= Yii::t('app', 'What can we do for you?') ?> →</h2>
+                </div>
+                <div class="col-md-6">
+                    <?= \yii\bootstrap4\Nav::widget([
+                        'items' => array_map(function ($page) {
+                            return [
+                                'label' => $page->title,
+                                'url' => "#$page->id",
+                            ];
+                        }, $model->pages)
+                    ]) ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="card-deck">
             <?php if ($model->getPages()->exists()): ?>
-                <?php foreach ($model->pages as $page): ?>
-                    <article class="col-md-6 my-4">
-                        <header>
-                            <h2><?= Html::encode($page->title) ?></h2>
-                            <p class="lead"><?= Html::encode($page->abstract) ?></p>
-                        </header>
-                        <?php if ($page->body): ?>
-                            <?= \yii\helpers\HtmlPurifier::process($page->body) ?>
-                        <?php endif; ?>
-                        <?= Html::a(Yii::t('app', 'Request service'), ['site/request'], [
+                <?php foreach ($model->pages as $i => $page): ?>
+                    <article id="<?= $page->id ?>" class="card my-4 no-shadow">
+                        <div class="card-body">
+                            <h3 class="card-title"><?= Html::encode($page->title) ?></h3>
+                            <p class="card-text"><?= Html::encode($page->abstract) ?></p>
+                        </div>
+                        <footer class="card-footer">
+                            <?= Html::a(Yii::t('app', 'Request service'), ['site/request'], [
                                 'class' => 'btn btn-lg btn-block btn-secondary'
-                        ]) ?>
+                            ]) ?>
+                        </footer>
                     </article>
+
+                    <?php if (($i + 1) % 2 == 0): ?>
+                        <div class="w-100"></div>
+                    <?php endif; ?>
                 <?php endforeach; ?>
             <?php endif ?>
         </div>
-
-
     </div>
 </article>
+
+<?php $this->beginBlock('prefooter') ?>
+<h2><?= Yii::t('app', 'can we help you?') ?></h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus alias asperiores, autem consequatur delectus
+    dolorem ex expedita iste magnam minima modi mollitia perspiciatis possimus repellat saepe temporibus totam velit
+    voluptatibus!</p>
+<p><?= Html::a(Yii::t('app', 'Get in touch'), '#', ['class' => 'btn btn-lg btn-secondary']) ?></p>
+<?php $this->endBlock() ?>

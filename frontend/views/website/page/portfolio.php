@@ -9,7 +9,6 @@ $this->image = $model->image;
 
 $dataProvider->pagination->pageSize = 24;
 
-
 ?>
 
 <article id="<?= $model->slug ?>" class="<?= $model->type->name ?>">
@@ -35,3 +34,11 @@ $dataProvider->pagination->pageSize = 24;
 
     </div>
 </article>
+<?php $this->beginBlock('prefooter') ?>
+<h2><?= Yii::t('app', 'starting a new project?') ?></h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus alias asperiores, autem consequatur delectus
+    dolorem ex expedita iste magnam minima modi mollitia perspiciatis possimus repellat saepe temporibus totam velit
+    voluptatibus!</p>
+<p><?= Html::a(Yii::t('app', 'Get in touch'), '#', ['class' => 'btn btn-lg btn-secondary']) ?></p>
+<?php $this->endBlock() ?>
+

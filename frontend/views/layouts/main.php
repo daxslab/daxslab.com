@@ -76,11 +76,21 @@ NavBar::end();
 <?= $content ?>
 
 
+<?php if (isset($this->blocks['prefooter'])): ?>
+    <div class="pre-footer">
+        <div class="container">
+            <?= $this->blocks['prefooter']?>
+        </div>
+    </div>
+<?php endif; ?>
 <footer>
     <div class="container">
         <div class="row">
             <div class="col-md-5">
-                <h2 class="mb-4"><?= Yii::t('app', 'Contact Us!') ?></h2>
+                <?= Html::img('@web/images/daxslab-horizontal-white.png', [
+                    'class' => 'img-fluid mb-4',
+                    'alt' => Yii::t('app', 'Contact Us!'),
+                ]) ?>
                 <p>
                     <?= Yii::t('app', 'If you are interested in develop a new project or update and existing one please, let us know') ?>
                 </p>

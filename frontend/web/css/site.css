@@ -6,6 +6,8 @@ body {
 }
 
 body > footer {
+    background: #300a24;
+    color: #fff;
     padding-top: 3em;
     padding-bottom: 2em;
     font-size: .85em;
@@ -13,6 +15,14 @@ body > footer {
 
 body > footer h2 {
     border-bottom: 1px solid rgb(66, 141, 209, 0.4);
+}
+
+.pre-footer{
+    background: #bd722e;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    margin-top: 2em;
 }
 
 h1 {
