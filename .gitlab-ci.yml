@@ -21,9 +21,4 @@ deploy_stage:
   #except:
   #  - branches
   script:
-    - ssh daxslab_web@server3.daxslab.com
-    - cd ../../web/public_daxslab.com/
-    - git reset --hard
-    - git pull $GIT_ADDRESS master
-    - php7.2 composer.phar install -n
-    - yes | php7.2 yii migrate
+    - ssh daxslab_web@server3.daxslab.com "cd ../../web/public_daxslab.com/; git reset --hard; git pull $GIT_ADDRESS master; php7.2 composer.phar install -n ; yes | php7.2 yii migrate;"
