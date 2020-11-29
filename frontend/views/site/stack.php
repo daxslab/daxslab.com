@@ -14,7 +14,7 @@ use yii\helpers\Html;
                 <header class="border-bottom mb-4">
                     <h2><?= Yii::t('app', 'Our Stack') ?></h2>
                 </header>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi debitis eos expedita iste nihil non quis rem vero voluptas voluptatum. Aliquam aliquid consequatur esse impedit, qui sapiente sed veniam. Reprehenderit.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, architecto assumenda deleniti dolorem exercitationem ipsam obcaecati odio possimus quis sequi temporibus vero vitae. Aliquam at, culpa dolores laboriosam molestias tenetur.</p>
             </div>
             <div class="col-md-9">
                 <?php foreach ($techs as $tech): ?>

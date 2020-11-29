@@ -14,7 +14,7 @@ $this->image = $model->image;
     <header class="jumbotron text-center">
         <div class="container">
             <h1 class="display-3">
-                <?= Html::img('@web/images/daxslab-white.png', [
+                <?= Html::img('@web/images/daxslab-horizontal-white.svg', [
                     'alt' => $this->title,
                     'class' => 'img-fluid',
                 ]) ?>

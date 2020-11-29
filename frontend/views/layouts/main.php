@@ -87,7 +87,7 @@ NavBar::end();
     <div class="container">
         <div class="row">
             <div class="col-md-5">
-                <?= Html::img('@web/images/daxslab-horizontal-white.png', [
+                <?= Html::img('@web/images/daxslab-horizontal-white.svg', [
                     'class' => 'img-fluid mb-4',
                     'alt' => Yii::t('app', 'Contact Us!'),
                 ]) ?>
@@ -100,13 +100,13 @@ NavBar::end();
                 </ul>
             </div>
             <div class="col-md-5">
-                <h2 class="mb-4"><?= Yii::t('app', 'Navigate') ?></h2>
+                <h2 class="mb-1"><?= Yii::t('app', 'Navigate') ?></h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis dignissimos distinctio, doloremque
                     dolores id quae temporibus veritatis! Blanditiis consequatur cum cupiditate dolores enim perferendis
                     provident quia, ratione velit voluptatem! Natus?</p>
             </div>
             <div class="col-md-2">
-                <h2 class="mb-4"><?= Yii::t('app', 'Social') ?></h2>
+                <h2 class="mb-1"><?= Yii::t('app', 'Social') ?></h2>
                 <?= $this->render('//site/social-links') ?>
             </div>
         </div>

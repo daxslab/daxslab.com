@@ -13,10 +13,6 @@ body > footer {
     font-size: .85em;
 }
 
-body > footer h2 {
-    border-bottom: 1px solid rgb(66, 141, 209, 0.4);
-}
-
 .pre-footer{
     background: #bd722e;
     color: #fff;
