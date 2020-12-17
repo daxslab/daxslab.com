@@ -14,7 +14,7 @@ use yii\helpers\Html;
 
         <?php if ($dataProvider->count): ?>
             <?= \yii\widgets\ListView::widget([
-                'layout' => '{items}{pager}',
+                'layout' => "<div class='card-deck'>{items}</div>\n{pager}",
                 'dataProvider' => $dataProvider,
                 'itemView' => "service-item",
                 'itemOptions' => ['tag' => false],

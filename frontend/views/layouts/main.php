@@ -28,6 +28,9 @@ $yearString = Yii::$app->params['year'] != date('Y')
     ? Yii::$app->params['year'] . ' - ' . date('Y')
     : date('Y');
 
+$mainId = isset($this->params['mainId']) ? $this->params['mainId'] : 'none';
+$mainClass = isset($this->params['mainClass']) ? $this->params['mainClass'] : '';
+
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -63,7 +66,7 @@ NavBar::begin([
     ]),
     'brandUrl' => Yii::$app->homeUrl,
     'options' => [
-        'class' => 'navbar navbar-expand-md navbar-dark bg-dark no-shadow fixed-top',
+        'class' => 'navbar navbar-expand-md navbar-dark bg-transparent no-shadow fixed-top',
     ],
 ]);
 echo Nav::widget([
@@ -73,30 +76,31 @@ echo Nav::widget([
 NavBar::end();
 ?>
 
-<?= $content ?>
-
+<main id="<?= $mainId ?>" class="<?= $mainClass ?>">
+    <?= $content ?>
+</main>
 
 <?php if (isset($this->blocks['prefooter'])): ?>
     <div class="pre-footer">
         <div class="container">
-            <?= $this->blocks['prefooter']?>
+            <?= $this->blocks['prefooter'] ?>
         </div>
     </div>
 <?php endif; ?>
-<footer>
+<footer class="bg-primary">
     <div class="container">
         <div class="row">
-            <div class="col-md-5">
+            <div class="col-md-4">
                 <?= Html::img('@web/images/daxslab-horizontal-white.svg', [
                     'class' => 'img-fluid mb-4',
                     'alt' => Yii::t('app', 'Contact Us!'),
                 ]) ?>
                 <p>
-                    <?= Yii::t('app', 'If you are interested in develop a new project or update and existing one please, let us know') ?>
+                    <?= Yii::t('app', 'If you are interested in develop a new project or update and existing one please, let us know:') ?>
                 </p>
                 <ul>
-                    <li>+53 58 074 332</li>
-                    <li>info@daxslab.com</li>
+                    <li><a href="https://wa.me/5358074332" target="_blank">WhatsApp (+5358074332)</li>
+                    <li><?= Html::a("Email us!", '#') ?></li>
                 </ul>
             </div>
             <div class="col-md-5">
@@ -110,7 +114,7 @@ NavBar::end();
                 <?= $this->render('//site/social-links') ?>
             </div>
         </div>
-        <p class="small">
+        <p class="small mb-0">
             <?= Html::a(Yii::t('app', 'Terms of use')) ?> - Copyright &copy; (<?= $yearString ?>) Daxslab
             - <?= Yii::t('app', 'All right reserved') ?>
         </p>

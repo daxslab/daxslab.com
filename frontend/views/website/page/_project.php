@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\StringHelper;
 
 $linkContent = $model->image
     ? Html::img(Yii::$app->thumbnailer->get($model->image, 683, 384, 85), [
@@ -12,11 +13,15 @@ $linkContent = $model->image
     : $model->title;
 ?>
 
-<article id="<?= $model->id ?>" class="card mb-4">
+<article id="<?= $model->id ?>" class="card card-portfolio mb-4">
     <?= Html::a($linkContent, $model->url, ['title' => $model->title]) ?>
+    <div class="card-body">
+        <h2 class="card-title"><?= Html::encode($model->title) ?></h2>
+        <p class="card-text"><?= Html::encode(StringHelper::truncateWords($model->abstract, 30)) ?></p>
+    </div>
 </article>
 
-<?php if (($index + 1) % 2 == 0): ?>
+<?php if (($index + 1) % 3 == 0): ?>
     <div class="w-100"></div>
 <?php endif; ?>
 

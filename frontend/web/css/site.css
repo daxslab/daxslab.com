@@ -1,172 +1,163 @@
-body {
-    padding-top: 79px;
-    font-size: 18px;
-    font-family: "Asap", sans-serif;
-    color: #300a24;
+.navbar-brand {
+    font-family: Denmark, sans-serif;
+    text-transform: lowercase;
 }
 
-body > footer {
-    background: #300a24;
-    color: #fff;
-    padding-top: 3em;
-    padding-bottom: 2em;
-    font-size: .85em;
-}
-
-.pre-footer{
-    background: #bd722e;
-    color: #fff;
-    text-align: center;
-    padding: 1em 0;
-    margin-top: 2em;
-}
-
-h1 {
-    font-family: Denmark;
-}
-
-h2, h3, h4, h5, h6, .breadcrumb {
+.navbar-brand .navbar-brand-slogan {
     font-family: "Continuum Medium";
 }
 
-h1 {
-    font-size: 2.6em;
-    word-break: break-word;
+.navbar.bg-primary {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .25);
 }
 
-h2 {
-    font-size: 2em;
-}
-
-.jumbotron {
-    background: #300a24;
-    margin-bottom: 0;
-    border-radius: 0;
-    color: #fff;
-    text-align: center;
-}
-
-.jumbotron h1 {
-    color: #fff !important;
+.navbar .navbar-nav > .nav-item > .nav-link {
+    font-family: "Continuum Medium", sans-serif;
     text-transform: lowercase;
-}
-
-.jumbotron .lead{
-    font-family: 'Continuum Medium', sans-serif;
-    font-weight: normal;
-}
-
-.navbar-brand {
-    font-family: Denmark;
-    text-transform: lowercase;
-}
-
-.navbar-dark.bg-dark {
-    background: #300a24 !important;
-}
-
-.navbar-light{
-    padding-top: 0;
-    padding-bottom: 0;
-    transition: padding-top 0.5s;
-}
-
-.navbar-light .navbar-brand {
-    color: #300a24;
-}
-
-.navbar-dark .navbar-nav .nav-link {
-    color: #428dd1;
-}
-
-.navbar-nav .nav-link,
-.navbar-brand-slogan {
-    font-family: "Continuum Light";
-    font-weight: bold;
-}
-
-.navbar-light .navbar-nav .nav-link,
-.navbar-brand-slogan {
-    color: #428dd1;
-}
-
-.breadcrumb {
-    padding-left: 0;
-    background: transparent;
-}
-
-.btn {
-    font-family: "Asap", sans-serif;
-}
-
-.lead {
-    font-weight: 100;
-    font-size: 1.25em;
-}
-
-h2.card-title,
-h3.card-title {
-    font-size: 1.5em;
-}
-
-.small {
-    font-size: .85em;
 }
 
 .no-shadow {
-    box-shadow: none;
+    transition: all .35s;
 }
 
-section.block {
-    margin: 2em 0;
+.jumbotron {
+    background: transparent;
+    margin-bottom: 0;
 }
 
+.btn{
+    font-family: "Continuum Medium";
+}
 
-@media (min-width: 992px) {
+.bg-transparent {
+    background: transparent;
+}
+
+.card.card-service-item {
+    background: transparent;
+    border: none;
+}
+
+.card.card-service-item::before {
+    display: block;
+    content: counter(ctr, decimal-leading-zero) ".";
+    counter-increment: ctr;
+    font-family: Denmark, sans-serif;
+    margin: 2.6rem 0 2.2rem;
+    font-weight: 700;
+    font-size: 3.6rem;
+    line-height: 1;
+    color: #f8b133;
+}
+
+.lead {
+    font-weight: bold;
+}
+
+body {
+    background-image: url(../images/background.jpg);
+    background-size: cover;
+    background-position: center center;
+    font-family: Nunito, sans-serif;
+    counter-reset: ctr;
+}
+
+main{
+    padding-top: 76px;
+}
+
+h1, h2, h3, h4, h5, h6, a {
+    color: #f8b133;
+}
+
+a:hover{
+    color: #ccc;
+}
+
+h1 {
+    font-family: Denmark, sans-serif;
+    text-transform: lowercase;
+}
+
+h2, h3, h4, h5, h6 {
+    font-family: "Continuum Medium", sans-serif;
+}
+
+main {
+    background-color: rgba(57, 11, 70, .9);
+    color: white;
+}
+
+body > footer{
+    color: white;
+    padding: 2em 0;
+}
+
+.card.card-portfolio{
+    border-color: #21002a;
+    background: #21002a;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .25);
+}
+
+@media (min-width: 960px) {
     body {
-        padding-top: 91px;
         font-size: 20px;
     }
 
-    h1 {
-        font-size: 4.5em;
-        word-break: break-word;
+    main {
+        padding-top: 81px;
+        padding-bottom: 2em;
     }
 
-    h2 {
-        font-size: 3em;
-    }
-
-    h3 {
-        font-size: 2.75em;
+    section.block {
+        margin: 4em 0 2em;
     }
 
     body > footer {
-        padding-top: 6em;
-        padding-bottom: 4em;
-    }
-
-    body > footer .list-social {
-        font-size: 2em;
-    }
-
-    .jumbotron {
         padding-top: 4em;
-        padding-bottom: 6em;
     }
 
-    .landing .jumbotron h1 {
-        font-size: 5em;
-        text-transform: uppercase;
+    .navbar-brand {
+        font-size: 20px;
     }
 
-    .service-item {
-        margin: 4em 0;
+    .lead {
+        font-size: 1.25em;
     }
-}
 
-@media (min-width: 1200px) {
-    .container {
-        max-width: 960px;
+    .card.card-service-item {
+        max-width: 50%;
+    }
+
+    .card.card-portfolio{
+        max-width: 33.333333333333333333333333333333333333333333333%;
+    }
+
+    .card.card-portfolio .card-title{
+        font-size: 1.12em;
+    }
+
+    section.block header {
+        text-align: right;
+    }
+
+    header.jumbotron p.lead,
+    section.block header p.lead {
+        font-size: 2em;
+        line-height: 1.1;
+        margin: 2em 10%;
+        text-align: left;
+    }
+
+    h1 {
+        font-size: 4em;
+    }
+
+    h2 {
+        font-size: 1.75em;
+    }
+
+    h3 {
+        font-size: 1.5em;
     }
 }
