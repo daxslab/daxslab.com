@@ -1,0 +1,24 @@
+image: php:7.2
+
+before_script:
+  - set -xe
+  - apt-get update -yqq
+  - apt-get install git -yqq
+  - apt-get install rsync -yqq
+  - 'which ssh-agent || ( apt-get install -qq openssh-client )'
+  - eval $(ssh-agent -s)
+  - ssh-add <(echo "$SSH_PRIVATE_KEY") > /dev/null
+  - mkdir -p ~/.ssh
+  - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+
+deploy_stage:
+  stage: deploy
+  environment: Staging
+  only:
+    - master
+  #only:
+  #  - tags
+  #except:
+  #  - branches
+  script:
+    - ssh daxslab_web@server3.daxslab.com "cd ../../web/public_daxslab.com/; git reset --hard; git pull $GIT_ADDRESS master; php7.2 composer.phar install -n ; yes | php7.2 yii migrate;"
