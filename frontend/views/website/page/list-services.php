@@ -28,31 +28,11 @@ $this->image = $model->image;
         </div>
     </div>
 
-    <div class="bg-light py-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h2><?= Yii::t('app', 'What can we do for you?') ?> →</h2>
-                </div>
-                <div class="col-md-6">
-                    <?= \yii\bootstrap4\Nav::widget([
-                        'items' => array_map(function ($page) {
-                            return [
-                                'label' => $page->title,
-                                'url' => "#$page->id",
-                            ];
-                        }, $model->pages)
-                    ]) ?>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div class="container">
         <div class="card-deck">
             <?php if ($model->getPages()->exists()): ?>
                 <?php foreach ($model->pages as $i => $page): ?>
-                    <article id="<?= $page->id ?>" class="card my-4 no-shadow">
+                    <article id="<?= $page->id ?>" class="card my-4 no-shadow bg-primary">
                         <div class="card-body">
                             <h3 class="card-title"><?= Html::encode($page->title) ?></h3>
                             <p class="card-text"><?= Html::encode($page->abstract) ?></p>

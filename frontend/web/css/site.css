@@ -14,6 +14,11 @@
 .navbar .navbar-nav > .nav-item > .nav-link {
     font-family: "Continuum Medium", sans-serif;
     text-transform: lowercase;
+    color: #fff;
+}
+
+.navbar .navbar-nav > .nav-item > .nav-link:hover {
+    color: #f8b133;
 }
 
 .no-shadow {
@@ -25,7 +30,7 @@
     margin-bottom: 0;
 }
 
-.btn{
+.btn {
     font-family: "Continuum Medium";
 }
 
@@ -54,15 +59,30 @@
     font-weight: bold;
 }
 
+.stack-icon {
+    width: 24%;
+    background: white;
+    margin-bottom: .25em;
+}
+
+.breadcrumb {
+    background: #f8b133;
+}
+
+.breadcrumb a {
+    color: #390b46;
+}
+
 body {
     background-image: url(../images/background.jpg);
     background-size: cover;
     background-position: center center;
     font-family: Nunito, sans-serif;
+    font-size: 18px;
     counter-reset: ctr;
 }
 
-main{
+main {
     padding-top: 76px;
 }
 
@@ -70,7 +90,23 @@ h1, h2, h3, h4, h5, h6, a {
     color: #f8b133;
 }
 
-a:hover{
+h2 {
+    font-size: 1.75em;
+}
+
+h3 {
+    font-size: 1.55em;
+}
+
+h4 {
+    font-size: 1.45em;
+}
+
+h5 {
+    font-size: 1.35em;
+}
+
+a:hover {
     color: #ccc;
 }
 
@@ -88,15 +124,25 @@ main {
     color: white;
 }
 
-body > footer{
+body > footer {
     color: white;
-    padding: 2em 0;
+    padding: 2em 30%;
 }
 
-.card.card-portfolio{
+.card.card-portfolio {
     border-color: #21002a;
     background: #21002a;
     box-shadow: 0 2px 5px rgba(0, 0, 0, .25);
+}
+
+.pre-footer {
+    background: rgba(248, 177, 51, .9);
+    color: #21002a;
+    padding: 2em 0;
+}
+
+.pre-footer h2 {
+    color: #21002a;
 }
 
 @media (min-width: 960px) {
@@ -117,6 +163,14 @@ body > footer{
         padding-top: 4em;
     }
 
+    .jumbotron {
+        padding: 4rem 2rem 2rem;
+    }
+
+    .breadcrumb {
+        margin-bottom: 2em;
+    }
+
     .navbar-brand {
         font-size: 20px;
     }
@@ -129,23 +183,24 @@ body > footer{
         max-width: 50%;
     }
 
-    .card.card-portfolio{
+    .card.card-portfolio {
         max-width: 33.333333333333333333333333333333333333333333333%;
     }
 
-    .card.card-portfolio .card-title{
+    .card.card-portfolio .card-title {
         font-size: 1.12em;
     }
 
-    section.block header {
-        text-align: right;
+    section.block header h2 {
+        font-family: Denmark;
+        text-transform: lowercase;
     }
 
     header.jumbotron p.lead,
     section.block header p.lead {
         font-size: 2em;
         line-height: 1.1;
-        margin: 2em 10%;
+        margin: 2em 10% 1em;
         text-align: left;
     }
 
@@ -154,10 +209,22 @@ body > footer{
     }
 
     h2 {
-        font-size: 1.75em;
+        font-size: 4.00em;
     }
 
     h3 {
-        font-size: 1.5em;
+        font-size: 1.75em;
+    }
+
+    h4 {
+        font-size: 1.55em;
+    }
+
+    h5 {
+        font-size: 1.35em;
+    }
+
+    .stack-icon {
+        width: 15%;
     }
 }

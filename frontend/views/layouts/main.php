@@ -88,32 +88,31 @@ NavBar::end();
     </div>
 <?php endif; ?>
 <footer class="bg-primary">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <?= Html::img('@web/images/daxslab-horizontal-white.svg', [
-                    'class' => 'img-fluid mb-4',
-                    'alt' => Yii::t('app', 'Contact Us!'),
-                ]) ?>
-                <p>
-                    <?= Yii::t('app', 'If you are interested in develop a new project or update and existing one please, let us know:') ?>
-                </p>
-                <ul>
-                    <li><a href="https://wa.me/5358074332" target="_blank">WhatsApp (+5358074332)</li>
-                    <li><?= Html::a("Email us!", '#') ?></li>
-                </ul>
-            </div>
-            <div class="col-md-5">
-                <h2 class="mb-1"><?= Yii::t('app', 'Navigate') ?></h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis dignissimos distinctio, doloremque
-                    dolores id quae temporibus veritatis! Blanditiis consequatur cum cupiditate dolores enim perferendis
-                    provident quia, ratione velit voluptatem! Natus?</p>
-            </div>
-            <div class="col-md-2">
-                <h2 class="mb-1"><?= Yii::t('app', 'Social') ?></h2>
-                <?= $this->render('//site/social-links') ?>
-            </div>
-        </div>
+    <div class="container text-center">
+
+        <p>
+            <?= Yii::t('app', 'If you are interested in develop a new project or update and existing one please, let us know:') ?><br/>
+            <a href="https://wa.me/5358074332" target="_blank">WhatsApp (+5358074332)</a> | <?= Html::a("Email us!", '#') ?>
+        </p>
+
+        <?= Nav::widget([
+            'encodeLabels' => false,
+            'options' => ['class' => 'nav nav-justified fa-2x mb-4'],
+            'items' => [
+                ['label' => Html::tag('i', false, ['class' => 'fab fa-fw fa-facebook']), Yii::$app->params['contacts']['facebook']],
+                ['label' => Html::tag('i', false, ['class' => 'fab fa-fw fa-twitter']), Yii::$app->params['contacts']['twitter']],
+                ['label' => Html::tag('i', false, ['class' => 'fab fa-fw fa-telegram']), Yii::$app->params['contacts']['telegram']],
+                ['label' => Html::tag('i', false, ['class' => 'fab fa-fw fa-linkedin']), Yii::$app->params['contacts']['linkedin']],
+                ['label' => Html::tag('i', false, ['class' => 'fab fa-fw fa-github']), Yii::$app->params['contacts']['github']],
+                ['label' => Html::tag('i', false, ['class' => 'fa fa-fw fa-rss']), ['/site/feed']],
+            ]
+        ]) ?>
+
+        <?= Html::img('@web/images/daxslab-horizontal-white.svg', [
+            'class' => 'img-fluid mb-4',
+            'alt' => Yii::t('app', 'Contact Us!'),
+        ]) ?>
+
         <p class="small mb-0">
             <?= Html::a(Yii::t('app', 'Terms of use')) ?> - Copyright &copy; (<?= $yearString ?>) Daxslab
             - <?= Yii::t('app', 'All right reserved') ?>

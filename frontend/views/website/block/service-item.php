@@ -16,9 +16,7 @@ $title = Yii::t('app', "I'm interested in {service}", [
     <h3 class="card-title"><?= Html::a(Html::encode($model->title), $model->url) ?></h3>
     <p class="lead card-text">
         <?= Html::encode($model->abstract) ?>
-        <?= Html::a(Yii::t('app', 'Continue reading...'), ['/contact/default/index',
-            'subject' => $title,
-        ], [
+        <?= Html::a(Yii::t('app', 'Continue reading...'), $model->url, [
             'title' => $title,
         ]) ?>
     </p>
