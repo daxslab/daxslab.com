@@ -1,14 +1,13 @@
 <?php
 
-/* @var $this View */
-
-/* @var $content string */
-
 use yii\helpers\Html;
 use yii\bootstrap4\Nav;
 use yii\bootstrap4\NavBar;
 use frontend\assets\AppAsset;
 use yii\web\View;
+
+/* @var $this View */
+/* @var $content string */
 
 $mainMenu = Yii::$app->website->getMenu('main');
 $menuItems = isset($mainMenu)
@@ -101,12 +100,12 @@ NavBar::end();
             'encodeLabels' => false,
             'options' => ['class' => 'nav nav-justified nav-social mb-4'],
             'items' => [
-                ['label' => Html::tag('i', false, ['class' => 'fab fa-fw fa-facebook']), Yii::$app->params['contacts']['facebook']],
-                ['label' => Html::tag('i', false, ['class' => 'fab fa-fw fa-twitter']), Yii::$app->params['contacts']['twitter']],
-                ['label' => Html::tag('i', false, ['class' => 'fab fa-fw fa-telegram']), Yii::$app->params['contacts']['telegram']],
-                ['label' => Html::tag('i', false, ['class' => 'fab fa-fw fa-linkedin']), Yii::$app->params['contacts']['linkedin']],
-                ['label' => Html::tag('i', false, ['class' => 'fab fa-fw fa-github']), Yii::$app->params['contacts']['github']],
-                ['label' => Html::tag('i', false, ['class' => 'fa fa-fw fa-rss']), ['/site/feed']],
+                ['label' => Html::tag('i', false, ['class' => 'fab fa-fw fa-facebook']), 'url' => Yii::$app->params['contacts']['facebook']],
+                ['label' => Html::tag('i', false, ['class' => 'fab fa-fw fa-twitter']), 'url' => Yii::$app->params['contacts']['twitter']],
+                ['label' => Html::tag('i', false, ['class' => 'fab fa-fw fa-telegram']), 'url' => Yii::$app->params['contacts']['telegram']],
+                ['label' => Html::tag('i', false, ['class' => 'fab fa-fw fa-linkedin']), 'url' => Yii::$app->params['contacts']['linkedin']],
+                ['label' => Html::tag('i', false, ['class' => 'fab fa-fw fa-github']), 'url' => Yii::$app->params['contacts']['github']],
+                ['label' => Html::tag('i', false, ['class' => 'fa fa-fw fa-rss']), 'url' => ['/site/feed']],
             ]
         ]) ?>
 
