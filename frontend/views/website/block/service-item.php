@@ -23,8 +23,11 @@ $title = Yii::t('app', "I'm interested in {service}", [
     <p class="card-text">
         <?= Html::a(Yii::t('app', 'Request service'), '#modal-quote', [
             'class' => 'btn btn-lg btn-outline-success',
+            'title' => Yii::t('app', 'Get a quote for {service}', [
+                'service' => $model->title,
+            ]),
             'data-toggle' => 'modal',
-            'title' => $title,
+            'data-url' => \yii\helpers\Url::toRoute(['/site/get-quote', 'service' => $model->title]),
         ]) ?>
     </p>
 </div>

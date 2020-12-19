@@ -11,7 +11,7 @@ use yii\web\View;
 ?>
 
 <?php \yii\widgets\Pjax::begin([
-        'enablePushState' => false,
+    'enablePushState' => false,
 ]) ?>
 
 <?php if (Yii::$app->session->hasFlash('success')): ?>
@@ -36,7 +36,7 @@ use yii\web\View;
             <?= $form->field($model, 'email') ?>
         </div>
         <div class="col-md-12">
-            <?= $form->field($model, 'service') ?>
+            <?= $form->field($model, 'service')->textInput(['readOnly' => true, 'disabled' => true]) ?>
         </div>
         <div class="col-md-12">
             <?= $form->field($model, 'body')->textarea([
