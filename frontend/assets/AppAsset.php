@@ -2,6 +2,7 @@
 
 namespace frontend\assets;
 
+use rmrevin\yii\fontawesome\NpmFreeAssetBundle;
 use yii\web\AssetBundle;
 
 /**
@@ -21,6 +22,6 @@ class AppAsset extends AssetBundle
     public $depends = [
         'yii\web\YiiAsset',
         'yii\bootstrap4\BootstrapPluginAsset',
-        'kartik\icons\FontAwesomeAsset',
+        NpmFreeAssetBundle::class,
     ];
 }

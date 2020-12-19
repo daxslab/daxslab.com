@@ -13,15 +13,16 @@ $linkContent = $model->image
     : $model->title;
 ?>
 
-<article id="<?= $model->id ?>" class="card card-portfolio mb-4">
-    <?= Html::a($linkContent, $model->url, ['title' => $model->title]) ?>
-    <div class="card-body">
-        <h2 class="card-title"><?= Html::encode($model->title) ?></h2>
-        <p class="card-text"><?= Html::encode(StringHelper::truncateWords($model->abstract, 30)) ?></p>
+<article class="card card-portfolio bg-primary mb-4">
+    <div class="row">
+        <div class="col-md-6 <?= $index % 2 == 1 ? 'order-md-1' : 'order-md-2' ?>">
+            <?= Html::a($linkContent, $model->url, ['title' => $model->title]) ?>
+        </div>
+        <div class="col-md-6 <?= $index % 2 == 1 ? 'order-md-2' : 'order-md-1' ?>">
+            <div class="card-body">
+                <h2 class="card-title"><?= Html::encode($model->title) ?></h2>
+                <p class="card-text"><?= Html::encode(StringHelper::truncateWords($model->abstract, 30)) ?></p>
+            </div>
+        </div>
     </div>
 </article>
-
-<?php if (($index + 1) % 3 == 0): ?>
-    <div class="w-100"></div>
-<?php endif; ?>
-

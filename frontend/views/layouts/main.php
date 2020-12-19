@@ -91,8 +91,10 @@ NavBar::end();
     <div class="container text-center">
 
         <p>
-            <?= Yii::t('app', 'If you are interested in develop a new project or update and existing one please, let us know:') ?><br/>
-            <a href="https://wa.me/5358074332" target="_blank">WhatsApp (+5358074332)</a> | <?= Html::a("Email us!", '#') ?>
+            <?= Yii::t('app', 'If you are interested in develop a new project or update and existing one please, let us know:') ?>
+            <br/>
+            <a href="https://wa.me/5358074332" target="_blank">WhatsApp (+5358074332)</a>
+            | <?= Html::a("Email us!", '#') ?>
         </p>
 
         <?= Nav::widget([
@@ -119,6 +121,15 @@ NavBar::end();
         </p>
     </div>
 </footer>
+
+<?php \yii\bootstrap4\Modal::begin([
+    'id' => 'modal-quote',
+    'title' => Yii::t('app', 'Get a free quote'),
+]) ?>
+
+<?= Yii::$app->runAction('/site/get-quote', ['service' => 'asdf']) ?>
+
+<?php \yii\bootstrap4\Modal::end() ?>
 
 <?php $this->endBody() ?>
 </body>

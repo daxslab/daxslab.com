@@ -32,18 +32,19 @@ $this->image = $model->image;
         <div class="card-deck">
             <?php if ($model->getPages()->exists()): ?>
                 <?php foreach ($model->pages as $i => $page): ?>
-                    <article id="<?= $page->id ?>" class="card my-4 no-shadow bg-primary">
+                    <article id="<?= $page->id ?>" class="card card-service-item my-4 bg-primary">
                         <div class="card-body">
                             <h3 class="card-title"><?= Html::encode($page->title) ?></h3>
                             <p class="card-text"><?= Html::encode($page->abstract) ?></p>
                         </div>
                         <footer class="card-footer">
-                            <?= Html::a(Yii::t('app', 'Request service'), ['site/request'], [
-                                'class' => 'btn btn-lg btn-block btn-secondary'
+                            <?= Html::a(Yii::t('app', 'Request service'), '#modal-quote', [
+                                'class' => 'btn btn-lg btn-block btn-outline-success',
+                                'data-toggle' => 'modal',
+                                'title' => $model->title,
                             ]) ?>
                         </footer>
                     </article>
-
                     <?php if (($i + 1) % 2 == 0): ?>
                         <div class="w-100"></div>
                     <?php endif; ?>

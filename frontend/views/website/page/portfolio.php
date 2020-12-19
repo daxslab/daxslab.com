@@ -25,7 +25,7 @@ $dataProvider->pagination->pageSize = 24;
 
         <?php if ($dataProvider->query->exists()): ?>
             <?= \yii\widgets\ListView::widget([
-                'layout' => "<div class='card-deck'>{items}</div>\n{pager}",
+                'layout' => "<div class='card-decka'>{items}</div>\n{pager}",
                 'dataProvider' => $dataProvider,
                 'itemView' => "_project",
                 'itemOptions' => ['tag' => false],

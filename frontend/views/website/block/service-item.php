@@ -12,7 +12,7 @@ $title = Yii::t('app', "I'm interested in {service}", [
 
 ?>
 
-<div class="card card-service-item">
+<div class="card card-service-item with-counter">
     <h3 class="card-title"><?= Html::a(Html::encode($model->title), $model->url) ?></h3>
     <p class="lead card-text">
         <?= Html::encode($model->abstract) ?>
@@ -21,10 +21,9 @@ $title = Yii::t('app', "I'm interested in {service}", [
         ]) ?>
     </p>
     <p class="card-text">
-        <?= Html::a(Yii::t('app', 'Request service'), ['/contact/default/index',
-            'subject' => $title,
-        ], [
+        <?= Html::a(Yii::t('app', 'Request service'), '#modal-quote', [
             'class' => 'btn btn-lg btn-outline-success',
+            'data-toggle' => 'modal',
             'title' => $title,
         ]) ?>
     </p>

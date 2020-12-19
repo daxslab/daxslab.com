@@ -3,6 +3,9 @@
 namespace frontend\controllers;
 
 use daxslab\website\models\Metadata;
+use Yii;
+use yii\base\ErrorException;
+use yii\i18n\PhpMessageSource;
 use yii\web\Controller;
 
 /**
@@ -59,6 +62,32 @@ class SiteController extends Controller
     public function actionSocialLinks()
     {
         return $this->renderPartial('social-links');
+    }
+
+    public function actionGetQuote($service)
+    {
+        $app = Yii::$app;
+        if (!isset($app->get('i18n')->translations['contact*'])) {
+            $app->get('i18n')->translations['contact*'] = [
+                'class' => PhpMessageSource::class,
+                'basePath' => Yii::getAlias('@vendor/daxslab/yii2-contact-form/message'),
+                'sourceLanguage' => 'en-US'
+            ];
+        }
+
+        $model = new \frontend\models\QuoteForm([
+            'service' => $service,
+        ]);
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            if ($model->sendEmail(Yii::$app->params['adminEmail'])) {
+                Yii::$app->session->setFlash('success', Yii::t('app', 'Thanks for your message! Your request have been sent. We will answer as soon as possible.'));
+            } else {
+                throw new ErrorException(Yii::t('app', 'Error while sending email'));
+            }
+        }
+        return $this->renderPartial('get-quote', [
+            'model' => $model,
+        ]);
     }
 
 }
