@@ -99,7 +99,7 @@ NavBar::end();
 
         <?= Nav::widget([
             'encodeLabels' => false,
-            'options' => ['class' => 'nav nav-justified fa-2x mb-4'],
+            'options' => ['class' => 'nav nav-justified nav-social mb-4'],
             'items' => [
                 ['label' => Html::tag('i', false, ['class' => 'fab fa-fw fa-facebook']), Yii::$app->params['contacts']['facebook']],
                 ['label' => Html::tag('i', false, ['class' => 'fab fa-fw fa-twitter']), Yii::$app->params['contacts']['twitter']],

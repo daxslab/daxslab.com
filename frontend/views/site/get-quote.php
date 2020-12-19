@@ -1,21 +1,23 @@
 <?php
 
-
 use frontend\models\QuoteForm;
 use yii\bootstrap4\ActiveForm;
+use yii\bootstrap4\Alert;
+use yii\bootstrap4\Html;
 use yii\web\View;
+use yii\widgets\Pjax;
 
 /* @var $this View */
 /* @var $model QuoteForm */
 
 ?>
 
-<?php \yii\widgets\Pjax::begin([
+<?php Pjax::begin([
     'enablePushState' => false,
 ]) ?>
 
 <?php if (Yii::$app->session->hasFlash('success')): ?>
-    <?= \yii\bootstrap4\Alert::widget([
+    <?= Alert::widget([
         'body' => Yii::$app->session->getFlash('success'),
         'options' => ['class' => 'alert-success'],
         'closeButton' => false,
@@ -45,11 +47,11 @@ use yii\web\View;
         </div>
     </div>
     <div class="form-group">
-        <?= \yii\bootstrap4\Html::submitButton(Yii::t('app', 'Send message'), [
+        <?= Html::submitButton(Yii::t('app', 'Send message'), [
             'class' => 'btn btn-lg btn-outline-success',
         ]) ?>
     </div>
 
     <?php ActiveForm::end() ?>
 <?php endif; ?>
-<?php \yii\widgets\Pjax::end() ?>
+<?php Pjax::end() ?>
